@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9DC08B"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/label_name_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="programmer calculator"
+        android:textColor="#40513B"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/label_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="you can easily convert  between\n different number systems"
+        android:textColor="#40513B"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/label_name_app"
+        app:layout_constraintTop_toBottomOf="@+id/label_name_app" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="520dp"
+        android:background="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/label_octal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Octal number"
+        android:textColor="#BE40513B"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/input_octal"
+        app:layout_constraintTop_toBottomOf="@+id/input_decimal" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/input_octal"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/input_background"
+        android:gravity="center_vertical"
+        android:hint="enter octal number"
+        android:maxLines="1"
+        android:paddingHorizontal="16dp"
+        android:textColorHint="#8040513B"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/input_decimal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@+id/input_decimal"
+        app:layout_constraintTop_toBottomOf="@+id/label_octal" />
+
+    <TextView
+        android:id="@+id/label_hex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Hexadecimal number"
+        android:textColor="#BE40513B"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/input_hex"
+        app:layout_constraintTop_toBottomOf="@+id/input_binary" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/input_hex"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/input_background"
+        android:gravity="center_vertical"
+        android:hint="enter hex number"
+        android:maxLines="1"
+        android:paddingHorizontal="16dp"
+        android:textColorHint="#8040513B"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/input_binary"
+        app:layout_constraintStart_toStartOf="@+id/input_binary"
+        app:layout_constraintTop_toBottomOf="@+id/label_hex" />
+
+    <TextView
+        android:id="@+id/label_binary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:text="Binary number"
+        android:textColor="#BE40513B"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/input_binary"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/input_binary"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/input_background"
+        android:gravity="center_vertical"
+        android:hint="enter binary number"
+        android:maxLines="1"
+        android:paddingHorizontal="16dp"
+        android:textColorHint="#8040513B"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_binary" />
+
+    <TextView
+        android:id="@+id/label_decimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Decimal number"
+        android:textColor="#BE40513B"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/input_decimal"
+        app:layout_constraintTop_toBottomOf="@+id/input_hex" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/input_decimal"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/input_background"
+        android:gravity="center_vertical"
+        android:hint="enter decimal number"
+        android:maxLines="1"
+        android:paddingHorizontal="16dp"
+        android:textColorHint="#8040513B"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/input_binary"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_binary"
+        app:layout_constraintTop_toBottomOf="@+id/label_decimal" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
