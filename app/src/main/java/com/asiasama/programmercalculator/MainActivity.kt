@@ -47,36 +47,28 @@ class MainActivity : AppCompatActivity() {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
         }
 
-        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+        override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
             when (currentFocusedView.id) {
                 octalResult.id -> {
-                    if (checkValidInput(currentFocusedView.text.toString(), NumericalBase.OCTAL) ) convertOctalNumber()
-                    else{
+                    if (checkValidInput(currentFocusedView.text.toString(), NumericalBase.OCTAL).not() )
                         Toast.makeText(this@MainActivity, " enter Invalid Octal number to convert it", Toast.LENGTH_SHORT).show()
-
-                    }
-
+                     convertOctalNumber()
                 }
                 hexadecimalResult.id -> {
-                    if (checkValidInput(currentFocusedView.text.toString(), NumericalBase.HEXADECIMAL)
-                    ) convertHexadecimalNumber()
-                    else Toast.makeText(this@MainActivity, " enter Invalid Hexadecimal to convert it",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    if (checkValidInput(currentFocusedView.text.toString(), NumericalBase.HEXADECIMAL).not())
+                        Toast.makeText(this@MainActivity, " enter Invalid Hexadecimal to convert it", Toast.LENGTH_SHORT).show()
+                    convertHexadecimalNumber()
                 }
                 decimalResult.id -> {
-                    if (checkValidInput(currentFocusedView.text.toString(), NumericalBase.DECIMAL)
-                    ) convertDecimalNumber()
-                    else Toast.makeText(this@MainActivity, " enter Invalid decimal number to convert it",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    if (checkValidInput(currentFocusedView.text.toString(), NumericalBase.DECIMAL).not())
+                        Toast.makeText(this@MainActivity, " enter Invalid decimal number to convert it", Toast.LENGTH_SHORT).show()
+                    convertDecimalNumber()
                 }
                 else -> {
-                    if (checkValidInput(currentFocusedView.text.toString(), NumericalBase.BINARY)
-                    ) convertBinaryNumber()
-                    else Toast.makeText(this@MainActivity, " enter Invalid Binary number ( 0, 1) to convert it",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    if (checkValidInput(currentFocusedView.text.toString(), NumericalBase.BINARY).not())
+                        Toast.makeText(this@MainActivity, " enter Invalid Binary number ( 0, 1) to convert it", Toast.LENGTH_SHORT).show()
+                    convertBinaryNumber()
+
                 }
             }
         }
@@ -152,7 +144,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun toBinary(number: String, base: NumericalBase): String {
         return when (base) {
-            NumericalBase.OCTAL -> baseConverter(NumericalBase.BINARY, NumericalBase.OCTAL, number?: "")
+            NumericalBase.OCTAL -> baseConverter(NumericalBase.BINARY, NumericalBase.OCTAL, number)
             NumericalBase.DECIMAL -> baseConverter(NumericalBase.BINARY, NumericalBase.DECIMAL, number)
             NumericalBase.HEXADECIMAL -> baseConverter(NumericalBase.BINARY, NumericalBase.HEXADECIMAL, number)
             else -> ""
