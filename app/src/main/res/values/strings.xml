@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Programmer Calculator</string>
+    <string name="programmer_calculator">programmer calculator</string>
+    <string name="enter_octal_number">enter octal number that expected 0–7 number</string>
+    <string name="enter_decimal_number">enter decimal number that expected 0–9 number</string>
+    <string name="enter_binary_number">enter binary number that expected 0–1 number</string>
+    <string name="enter_hexadecimal_number">enter hexadecimal that expected 1–9 &amp; abcdef</string>
+    <string name="you_can_easily_convert_between_ndifferent_number_systems">you can easily convert between\ndifferent number systems</string>
 </resources>
